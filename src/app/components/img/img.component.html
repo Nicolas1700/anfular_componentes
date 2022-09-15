@@ -1,1 +1,10 @@
-<p>img works!</p>
+<p>Componente IMG :)</p>
+<img (load)="imgLoad()" (error)="imgError()" width="200" [src]="img" *ngIf="img; else elseImg">
+
+<!-- ng-template, sirve para mostrar contenido por medio de
+  las directivas estructurales (como NgIf, NgForOfy NgSwitchotras)
+  solo se aciona en consecuencia de estas directivas.
+  En este caso un else-->
+<ng-template #elseImg>
+  <img [src]="imgDefault">
+</ng-template>
